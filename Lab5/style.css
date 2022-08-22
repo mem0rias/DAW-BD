@@ -1,0 +1,45 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
+body {
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    max-width:  50em;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #555;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+footer {
+    background-color: gray;
+}
+h1 {
+    background-color: lavender;
+}
+h1,h2, strong{
+    color: #555;
+}
+.verde{
+    color: green;
+    font-weight: bold;
+}
+ol.morado{
+    color: purple;
+}
+/* Seleccion de pseudo clases, para ciertos comportameintos*/
+.texto:hover{
+    color: white;
+}
+/* IDssss */
+#idperron{
+    color: darkblue;
+}
+
+
+
+.imagenes {
+    width: 250px;
+}
+
