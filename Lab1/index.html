@@ -52,21 +52,202 @@
         <div>
             <H2> Preguntas a responder </H2>
             <ol>
-                <li>
-                    Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? 
-                    <ol>
-                        <li>
-                            <p> Al usar important, para sobreescribir atributos de CSS?
-                                al forzar su aplciacon con la palabra clave "!important"
-                                esto es util para forzar estilos de etiquetas en clases 
-                                especificas
-                            </p>
-                        </li>
-                    </ol>
+                <li> ¿Cuál es la diferencia entre Internet y la World Wide Web?
+                    <ul>
+                        <li> El internet es la infraestructura física y la world wide web es la red que esta montada en esta infraestructura.</li>
+
+                    </ul>
                 </li>
-                
+                <li> ¿Cuáles son las partes de un URL?
+                    <ul>
+                        <li>Protocolo: Se refiere a HTTP, HTTPS, FTP</li>
+                        <li>Servidor
+                            <ul>
+                                <li>Nombre de servidor: Sitio al que vamos a visitar</li>
+                                <li>Dominio de nivel superior: .com .mx .edu, etc..</li>
+                                <li>Subdominio va entre el www. y el nombre del servidor</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Puerto: Corresponde al punto de entrada al servidor, directamente ligado al protocolo.
+                        </li>
+                        <li>Directorio: o	Lugar dentro del servidor donde se almacena el elemento al que se quiere acceder.</li>
+                    </ul>
+                </li>
+                <li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+                    <ul>
+                        <li> GET: 
+                            Sirve para obtener un resource de una pagina, es decir una pagina, archivo, etc.
+                        </li>
+                        <li>
+                            POST: 
+                            El post funciona para enviar datos de manera correcta a un servidor, el contenido del mensaje viene escondido dentro del body del request.
+                        </li>
+                        <li>
+                            PUT:
+                            El PUT funciona para actualizar contenidos de HTTP o crearlos, una vez creados no sucede nada si se realiza nuevamente el comando a menos que se actualicen los contenidos dentro del PUT.
+                        </li>
+                        <li>
+                            DELETE:
+                            Borra el resource que se identifica en el comando.
+                        </li>
+                        <li>
+                            HEAD:
+                            El head funciona como el GET solo que es mas ligero, solo se obtienen los headers de HTTP, para saber si se ha modificado la pagina.
+                        </li>
+                        <li>
+                            PATCH:
+                            Este comando tiene la función de aplicar modificaciones parciales a un recurso.
+                        </li>
+                    </ul>
+                    
+                </li>
+                <li> ¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
+                        <ul>
+                            <li>
+                                •	Se debería utilizar el método post, ya que este esconde sus contenidos dentro del cuerpo del request.
+                            </li>
+                        </ul>
+                </li>
+                <li>
+                    ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+                        <ul>
+                            <li>
+                                GET
+                            </li>
+                        </ul>
+                </li>
+                <li> Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
+
+                    <ul>
+                        <li>
+                            El código 200 significa que la petición que se ha hecho al servidor ha sido completada de manera satisfactoria.
+                        </li>
+                    </ul>
+
+                </li>
+                <li> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
+                    <ul>
+                        <li>
+                            No, ya que el usuario intento entrar a una página que no existe o que ha sido escondida por el desarrollador. Esto podría ser un problema únicamente si se sabe que la pagina existe y fue borrada o escondida accidentalmente por el desarrollador.
+                        </li>
+                    </ul>
+                    
+                </li>
+                <li> ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
+                    <ul>
+                        <li>
+                            •	El error 500 es conocido como “Internal server error” e informa que hubo problemas en cumplir la petición que se hizo.
+                        </li>
+                    </ul>
+
+                </li>
+                <li> ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+                    <ul>
+                        <li>
+                            Significa que el nuevo estándar de HTML no soporta directamente algunos tags antiguos. Se siguen desplegando con el fin de mantener compatibilidad, pero ya no son soportados directamente. 
+                        </li>
+                        <li> Algunos tags desaprobados son: </li>
+                        <li> applet</li>
+                        <li> basefont </li>
+                        <li> center</li>
+                        <li> dir</li>
+                        <li> embed</li>
+                    </ul>
+
+                </li>
+                <li> ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+                    <ul>
+                        <li>
+                            La inclusión de etiquetas semánticas para darle un mejor orden a los documentos de HTML, tales como header, body, footer, etc.s
+                        </li>
+                    </ul>
+                </li>
+                <li>¿Qué componentes de estructura y estilo tiene una tabla?
+                    <ul>
+                        <li> Columnas, td </li>
+                        <li> Filas, tr</li>
+                        <li> Header con el titulo de la table, th</li>
+                        <li> Ancho de linea, width</li>
+                        <li> Color de linea, color</li>
+                        <li> Estilo de line, style</li>
+                    </ul>
+
+                </li>
+                <li> ¿Cuáles son los principales controles de una forma HTML5?
+                    <ul>
+                        <li> input, funciona para recibir informacion </li>
+                        <li> label, ine varias etiquetas para facilitar la seleccion de las mismas por parte del usuario</li>
+                        <li> select, PErmite definir una lista de elementos a seleccionar</li>
+                        <li> textaream, Define una caja de texto</li>
+                        <li> button, un boton con el que el usuario puede interactuar</li>
+                        <li> fieldset, sirve para organizar entradas de informacion relevantes</li>
+                        <li> legent, Define el titulo del fieldset</li>
+                        <li> datalist, especifica una lista pre definida para un input</li>
+                        <li> output, Define la salida d eun script en la pagina</li>
+                        <li>option, se utiliza para las etiquetas de selecte y datalist con el fin de dar opctiones que el usuario pueda seleccionar</li>
+                        <li> optgroup, sirve para agrupar etiquetas option si se tiene una lista muy grane.</li>   
+                    </ul>
+                    
+                </li>
+                <li> ¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
+                        <ul>
+                            <li>
+                                Utilizo Chrome para navegar y obtuve un puntaje de 476/555 puntos.
+                            </li>
+                        </ul>
+                </li> ¿Cuál es el ciclo de vida de los sistemas de información?
+                    <ul>
+                        <li> Planificacion</li>
+                        <li> Analisis</li>
+                        <li> Diseño</li>
+                        <li> Desarrollo</li>
+                        <li>Integracion y periodo de pruebas</li>
+                        <li> Implementacion </li>
+                        <li> Mantenimiento</li> 
+                    </ul>
+
+                </li>
+                <li> ¿Cuál es el ciclo de desarrollo de sistemas de información?
+                    <ul>
+                        <li>
+                            Es el proceso donde inicia la producción del sistema de información después de que las fases de planificación y diseño del sistema se terminen.
+                        </li>
+                    </ul>
+                </li>
             </ol>
         </div>
+        <h2> Referencias</h2>
+        <ul>
+            <li>
+                Mozilla. (2022). PATCH. Recuperado de Mozilla developer, sitio web: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH
+            </li>
+            <li>
+                Mozilla. (2022). PUT. Recuperado de Mozilla developer, sitio web: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT
+            </li>
+            <li>
+                Mozilla. (2022). GET. Recuperado de Mozilla developer, sitio web: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET
+            </li>
+            <li>
+                Mozilla. (2022). DELETE. Recuperado de Mozilla developer, sitio web: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
+            </li>
+            <li>
+                W3schools. (2022). HTML Form Elements. Recuperado de w3schools, sitio web: https://www.w3schools.com/html/html_form_elements.asp
+            </li>
+            <li>
+                Mozilla. (2022). HEAD. Recuperado de Mozilla developer, sitio web: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD
+            </li>
+            <li>
+                PowerData. (2019,junio). Ciclo de vida de un sistema de información: fases y componentes. Recuperado de: PowerData. Sitio web: https://blog.powerdata.es/el-valor-de-la-gestion-de-datos/ciclo-de-vida-de-un-sistema-de-informacion-fases-y-componentes
+            </li>
+            <li>
+                W3. (S/f). Tables. Recuperado de w3.org, sitio web: https://www.w3.org/TR/WD-html40-970708/struct/tables.html#:~:text=An%20HTML%20table%20has%20the,and%20a%20series%20of%20rows.
+            </li>
+            <li>
+                Tutorials Point. HTML – Deprecated Tags. Recuperado de: tutorialspoint. Sitio web: https://www.tutorialspoint.com/html/html_deprecated_tags.htm
+            </li>
+
+        </ul>
     </body>
     
     <footer> 
