@@ -136,7 +136,17 @@ idSumaMatrices.onclick = () => {
         }
         stringsalida += "]\n";
     }
-    confirm("El resultado de la suma de matrices es: \n" + stringsalida);
+    confirm("La matriz resultantes es: \n" + stringsalida)
+    document.write("<h1> Matriz Resultante </h1> <br>")
+    document.write("<table>");
+    for(let i = 0; i < matriz1.length; i++){
+        document.write("<tr>");
+        for(let j = 0; j < matriz1[i].length; j++){
+            document.write("<td><h2>" + matriz1[i][j] + "</h2></td>"); 
+        }
+        document.write("</td>");
+    }
+    document.write("</table>")
 
 }  
 
