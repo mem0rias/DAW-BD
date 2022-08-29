@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Laboratorio 5</title>
+</head>
+<body>
+    <h1>Capacidades de JS en HTML</h1>
+    <ol>
+        <li id="Tablas"> <h3>Tablas de numeros!</h3> </li>
+        <li id="Suma"> <h3>Suma aleatoria </h3></li>
+        <li id="Contador"> <h3>Contador </h3></li>
+        <li id="Promedios"> <h3>Promedios</h3></li>
+        <li id="Inversos"> <h3>Inversos</h3></li>
+        <li id="SumaM"> <h3>Suma de matrices</h3>
+            <ul>
+                <li>
+                    <p>
+                        La suma de matrices consiste en sumar cada elemento de 2 matrices del mismo tamaño,
+                        para asi obtener una matriz resultante.
+                    </p>
+                </li>
+            </ul>
+        </li>
+    </ol>
+    
+
+   <h1> Preguntas de Laboratorio </h1>
+   <ol>
+    <li> ¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+        <ul>
+            <li> Tienen en comun el nombre</li>
+            <li> Ambos lenguajes siguen el paradigma de POO </li>
+            <li> El codigo de java se compila mientras que el de JS es interpretado</li>
+            <li> JS los tipos de datos son dinamicos, es decir no se tiene que especificar, a diferencia de java, donde siempre se tiene que definir un tipo de dato para cada variable.</li>
+            <li> Java se utiliza para realizar aplicaciones tanto en locales, como web. Mientras que JavaScript funciona principalmente en conjunto con HTML y navegadores web</li>
+        </ul>
+    </li>
+    <li> ¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)
+        <ul>
+            <li> getTime() para obtener el tiempo transcurrido desde 01/01/1970 </li>
+            <li> toDateString() para obtener la fecha actual en un formato legible</li>
+            <li> getMonth() Obtiene el mes dentro de un numero de 0 a 11</li>
+            <li> getHours() Obtiene la hora dentro de un rango de 0 a 23 Hrs</li>
+            <li> getMinutes() Obtiene los minutos dentro de un rango de 0 a 59 mins</li> 
+        </ul>
+    </li>
+    <li> ¿Qué métodos tienen los arreglos? (Menciona al menos 5*)
+        <ul>
+            <li> at(), retorna el elemento en la posicion especificada</li>
+            <li> concat(), retorna un arreglo nuevo con los elementos especificdos añadidos, ya sea otro arreglo o numeros extra</li>
+            <li> fill(), rellena un arreglo con un numero definido</li>
+            <li> find(), encuentra el primer elemento que coincida con la condicion dada</li>
+            <li> findLast(), encuentra el ultimo elemento que satisfaga la condicion dada</li>
+        </ul>
+    </li>
+    <li> ¿Cómo se declara una variable con alcance local dentro de una función?
+        <ul>
+            <li> Se declara escribiendola dentro de una funcion.</li>
+        </ul>
+    </li> 
+    <li> ¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+        <ul>
+            <li> La variable global puede ser editada por cualquier parte del codigo
+                por lo que hay que tener cuidado con que se modifique accidentalmente en
+                alguna otra parte del codigo para evita problemas.
+            </li>
+        </ul>
+    </li>
+    <li> ¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?
+        <ul>
+            <li> El metodo .search()</li>
+            <li> Este metodo es util ya que se pueden obetener informacion especifica de un string, como nombres
+                direcciones de correo, combinaciones de palabras indecentes o prohibidas por la aplicacion web, etc.
+            </li>
+        </ul>
+    </li>
+   </ol>
+
+<h2> Referencias</h2>
+<ul>
+    <li>
+        w3Schools. (2022). JavaScript Get Date Methods. recuperado el 28/08/2022 de: w3schools, sitio web: <a href ="https://www.w3schools.com/js/js_date_methods.asp ">https://www.w3schools.com/js/js_date_methods.asp </a>
+    </li>
+    <li>
+        MozillaCorp. (2022). Array. recuperado el 28/08/2022 de Mmdn web docs. sitio web: <a href= "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods </a>
+    </li>
+    <li>
+        w3Schools. (2022). JavaScript string search(). recuperado el 28/08/2022 de: w3schools, sitio web: <a href="https://www.w3schools.com/jsref/jsref_search.asp">https://www.w3schools.com/jsref/jsref_search.asp</a>
+    </li>
+    <li>
+        SoftwareGuild. (2022). What is the difference between Java and JavaScript?. recuperado el 28/08/2022 de SoftwareGuild. Sitio web: <a href="https://www.thesoftwareguild.com/faq/difference-between-java-and-javascript/#:~:text=According%20to%20the%20Java%20platform,and%20need%20only%20be%20interpreted.">https://www.thesoftwareguild.com/faq/difference-between-java-and-javascript/#:~:text=According%20to%20the%20Java%20platform,and%20need%20only%20be%20interpreted.</a>
+    </li>
+</ul>
+</body>
+<footer> 
+    <h3>Visual Studio Code</h3>
+    <a href="https://code.visualstudio.com/"> Editor Page</a>
+
+</footer>
+    <script src="Lab5.js"></script>
+</html>
