@@ -1,0 +1,31 @@
+Casos de uso descritos
+
+No: CU01
+Nombre: Autenticador Usuario
+
+Descripcion: Al momento den que eke =usario se autentica, se oresenta la interfaz inicial con base en los privilegios del correspondiente usuario
+Actores(s): Cualquier usuario
+
+Flujo basico: (Descripcion y detallado de casos de usos
+
+1) El caso de uso INIXIO cuando el usuario accede a sappa,itesm.mx
+2) El sistema presenta la interfaz para ingresar credenciales
+3) El usuario ingresa credenciales (login/password)
+4) El sistema valida credenciales
+5) El sistema consulta el rol del isiaqrio
+6) El sistema consulta los privilegios del, ROL
+7) El sistema presenta interfax de inicio en funcion del rol dek usuario
+8)Termina caso de uso
+
+Flujo Alterno:
+
+4.1) Las credencial de exrsd
+4.3EL soste,a ,uestrsa un  mensaje :"Credeualesiinc
+4.3)Regresa a punto 2
+
+wña
+Puntos de extension: No TIENE
+Requerimientos especiales: Seguridad: LA contrases
+
+Pre condicionesÑ El usuario este regostradoo
+Post condiciones:Que se muestr la interfax de inicio con los privilegios u aestsbki
