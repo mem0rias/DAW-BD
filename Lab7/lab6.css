@@ -1,0 +1,43 @@
+body {
+    background-color: lavenderblush;
+}
+
+#LoginBox {
+    position: relative;
+    left: 45%;
+    top: 45%;
+}
+
+.formin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.cantidades{
+    background-color: lavenderblush;
+}
+
+#compras {
+    width: auto;
+    
+    
+}
+#descuento{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    width: 100px;
+}
