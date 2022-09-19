@@ -20,6 +20,16 @@ app.use((request, response, next) => {
     next();
 });
 
+//Se empieza declarando las rutas especificas.
+app.use('/roots/root', (request, response, next) => {
+    response.send('este si es el root');
+    next();
+});
+app.use('/roots', (request, response, next) => {
+    response.send('Casi root pa, pero esto no es linux');
+    next();
+});
+
 app.listen(3000);
 console.log("Hola");
 console.log("HolaX2");
