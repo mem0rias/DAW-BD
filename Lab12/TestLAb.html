@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab6.css">
+    <title>Lab6 Ventas</title>
+</head>
+<body>
+    <div id="compras">
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th> Imagen </th>
+                <th> Descripcion</th>
+                <th> Costo Unitario</th>
+                <th> Cantidad</th>
+                <th> Precio total</th>
+            </tr>
+            <tr>
+                <td> Rollo California</td>
+                <td> <img src="img/california-roll-3-FP.jpg" alt="foto de sushi"> </td>
+                <td> Rollo fresco de arroz, pepino, alga y surimi</td>
+                <td id="cCalifornia"> 120</td>
+                <td> 
+                    <input type="number" value="0" id="qCalifornia" class="cantidades" min="0">
+                </td>
+                <td id="tCalifornia"> $0</td>
+            </tr>
+            <tr>
+                <td> Teriyaki de Pollo</td>
+                <td> <img src="img/Teriyaki-Chicken-plate-500x500.jpg" alt="foto de Teriyaki de Pollo"> </td>
+                <td> rico pollo cocinado a la plancha con nuestra salsa Teriyaki especial</td>
+                <td id="cTeriyaki"> 100</td>
+                <td> 
+                    <input type="number" value="0" id="qTeriyaki" class="cantidades"  min="0">
+                </td>
+                <td id="tTeriyaki"> $0</td>
+            </tr>
+            <tr>
+                <td> Dedos de queso</td>
+                <td> <img src="img/download.jfif" alt="foto de dedos de queso"> </td>
+                <td> Delicioso queso mozarella empanizado con un mix de salsas especial</td>
+                <td id="cDedos"> 120</td>
+                <td> 
+                    <input type="number" value="0" id="qDedos" class="cantidades"  min="0">
+                </td>
+                <td id="tDedos"> $0</td>
+            </tr>
+        </table>
+
+    <div>
+        <div>
+            <h2 id="totalm"> Total: $0 </h2>
+        </div>
+    </div>    
+    <div id="descuento">        
+        <input type="button" value="Activar descuento 10%" id="promo">
+        <input type="button" value="Activar descuento 20%" id="promo2">
+        <input type="button" value="Finalizar compra" id="fin">
+        <div id="info_extra"></div>
+    </div>
+</body>
+<footer>
+</footer>
+<script src="Lab6venta.js"></script>
+</html>
