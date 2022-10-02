@@ -5,12 +5,11 @@ const Readline = require('readline').createInterface({
     output: process.stdout,
 });
 
-
-htmlpro = filesystem.readFileSync('TestLAb.html');
+htmlpro = filesystem.readFileSync('TestLab.html');
 htmlfavs = filesystem.readFileSync('Lab10.html');
+
 const http = require('http');
 const server = http.createServer((request, response)=>{
-    
     if(request.url == "/"){
         console.log(request.url);
         response.setHeader('Content-Type', 'text/html');
@@ -37,9 +36,7 @@ const server = http.createServer((request, response)=>{
     else if(request.url == "/cine" && request.method == "POST"){
         const info = []
         request.on('data', (dato) => {
-            
             info.push(dato);
-            
         });
         return request.on('end', () => {
             const dato_final = Buffer.concat(info).toString();
@@ -53,7 +50,6 @@ const server = http.createServer((request, response)=>{
     else if(request.url == "/favs"){
         console.log(request.url);
         response.setHeader('Content-Type', 'text/html');
-        
         response.write(htmlfavs)
         response.write("<br>")
     }
@@ -67,7 +63,6 @@ const server = http.createServer((request, response)=>{
         response.write('<!DOCTYPE html>');
         response.write("<h1>Error 404: El recurso solicitado no existe</h1>");
         response.write("<h1> En caso de que deba existir, contacte al administrador del sistema </h1>")
-        
     }
     response.end();
 });
