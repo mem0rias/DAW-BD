@@ -1,0 +1,18 @@
+<%- include('./includes/head.ejs') %>
+    <h2>Listado: </h2>
+    <% if(result.length  > 0) { %>
+    <ul>
+        <% for(let elemento of result) { %>
+            <li> <%= elemento %> </li>
+        <% } %>
+    </ul>
+    <% } else { %>
+        <h2> Ingresa elementos en la otra pagina </h2>
+    <% } %>
+    <br>
+    <form action="/memo/favs" method="POST">
+        <div>
+            <button type="submit" id="boton" name="boton" class="btn btn-primary btn-lg btn-block" value="/memo/cine"> Añade mas pelis</button>
+        </div>
+    </form>
+<%- include('./includes/footer.ejs') %>
