@@ -1,0 +1,31 @@
+<%- include('./includes/head.ejs') %>
+    <h1> Registro de usuario </h1>
+    <br>
+    <form action="/inicio" method="POST">
+        <h2> Nombre(s) </h2>
+        <input type="text" id="nombre" name="nombre">
+        <br><br>
+        <h2> Primer Apellido </h2>
+        <input type="text" id="nombre" name="A1">
+        <br><br>
+        <h2> Segundo Apellido </h2>
+        <input type="text" id="nombre" name="A2">
+        <br><br>
+        <h2> Correo Electronico </h2>
+        <input type="text" id="nombre" name="Email">
+        <br><br>
+        <h2> Estado Civil</h2>
+        <select name="ECiv" id="ECiv">
+            <option value="Soltero"> Soltero</option>
+            <option value="Casado"> Casado</option>
+        </select>
+        <br><br>
+        <h2> Ocupacion </h2>
+        <input type="text" id="nombre" name="Ocupacion">
+        <br><br>
+        <h2> Telefono </h2>
+        <input type="text" id="nombre" name="Tel">
+        <br><br>
+        <input type="submit" id="enviar" name="enviar" value="Registrar">
+    </form>
+<%- include('./includes/footer.ejs') %>
