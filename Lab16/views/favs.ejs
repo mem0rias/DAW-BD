@@ -1,0 +1,43 @@
+<%- include('./includes/head.ejs') %>
+    
+    <% if(movieFav == "undefined") { %>
+    <h2>Selecciona la pelicula favorita de tus favoritas</h2>
+        <form action="/memo/favs" method="POST">
+        <% if(result.length  > 0) { %>
+                <% for(let elemento of result) { %>
+                    <button type="submit" id="boton" name="pelifav" class="btn btn-primary btn-lg btn-block" value="<%= elemento%>"> <%=elemento%></button>
+                <% } %>
+            <% } %>
+    </form>
+    <% } else { %>
+        <h2> Tu favorita de las favoritas es: </h2>
+        <ul>
+            <li>
+                <%= movieFav %>
+            </li>
+        </ul>
+    <% } %>
+
+    <h2>Listado: </h2>
+    <% if(result.length  > 0) { %>
+    <ul>
+        <% for(let elemento of result) { %>
+            <li> <%= elemento %> </li>
+        <% } %>
+    </ul>
+    <% } else { %>
+        <h2> Ingresa elementos en la otra pagina </h2>
+    <% } %>
+    <br>
+    <form action="/memo/favs" method="POST">
+        <div>
+            <button type="submit" id="boton" name="boton" class="btn btn-primary btn-lg btn-block" value="/memo/cine"> Añade mas pelis</button>
+            <br>
+            <br>
+            <button type="submit" id="boton" name="boton" class="btn btn-primary btn-lg btn-block" value="reset"> Borra La lista</button>
+            <br>
+            <br>
+            <button type="submit" id="boton" name="boton" class="btn btn-primary btn-lg btn-block" value="elminfav"> Quitar favorita</button>
+        </div>
+    </form>
+<%- include('./includes/footer.ejs') %>
