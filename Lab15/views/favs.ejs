@@ -1,5 +1,13 @@
 <%- include('./includes/head.ejs') %>
     <h2>Listado: </h2>
+    <form action="/memo/favs" methos="POST">
+        <% if(result.length  > 0) { %>
+                <% for(let elemento of result) { %>
+                    <button type="submit" id="boton" name="pelifav" class="btn btn-primary btn-lg btn-block" value="<%= elemento%>"> <%=elemento%></button>
+                <% } %>
+            <% }
+    </form>
+    
     <% if(result.length  > 0) { %>
     <ul>
         <% for(let elemento of result) { %>
