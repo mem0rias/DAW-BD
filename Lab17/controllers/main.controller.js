@@ -16,6 +16,40 @@ exports.submit = (request, response, next) => {
     response.redirect('/inicio');
 }
 
+exports.nav = (request, response, next) =>{
+    let val = request.body.boton;
+    console.log(val);
+    response.redirect(val);
+}
+
+exports.edit = (request, response, next) => {
+    
+    User.fetchNames().then(([rows, fieldData]) => {
+        //console.log(rows);
+        response.render('edit.ejs',{nombres: rows});
+        
+    }).catch((error) =>{
+        console.log(error);
+        response.redirect('/inicio');
+    });
+   
+}
+
+exports.selectedit = (request, response, next) => {
+    let parameters = request.body.consulta.split(" ");
+    console.log(parameters);
+    User.fetchOne(parameters[0], parameters[1], parameters[2]).then(([rows, fieldData]) => {
+        //console.log(rows);
+        console.log(rows);
+        response.redirect('/editar');
+    }).catch((error) =>{
+        console.log(error);
+        response.redirect('/inicio');
+    });
+    
+    
+    
+}
 exports.error = (request, response, next) => {
     response.status(404);
     response.render('error');

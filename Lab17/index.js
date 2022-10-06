@@ -10,16 +10,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 const cookieParser = require('cookie-parser');
 
 
-const mainControl = require('./controllers/main.controller');
+const rutass = require('./routes/main.routes');
 
 
 
 app.use(bodyParser.urlencoded({extended: false}));
-app.post('/inicio', mainControl.submit);
-app.use('/inicio', mainControl.inicio);
 
-
-
-app.use(mainControl.error);
+app.use('/', rutass);
 
 app.listen(3000);
