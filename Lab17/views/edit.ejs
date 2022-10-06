@@ -15,9 +15,12 @@
                     <select class="input" name="consulta" id="consulta">
                         <% for(let element of nombres) { %>
                             <% let name = element.nombre + " " + element.Primer_Apellido + " " + element.Segundo_Apellido; %>
-                            <option value="<%= name %>"> <%= name %> </option>
+                            <% let name2 = element.nombre + "^" + element.Primer_Apellido + "^" + element.Segundo_Apellido; %>
+                            <option value="<%= name2 %>"> <%= name %> </option>
                         <% } %>
                     </select>
+                    <br>
+                    <br>
                     <button class="button is-primary is-fullwidth" type="submit" id="boton" name="boton" value="/editar"> Seleccionar Usuario</button>
                 </form>
             </div> 

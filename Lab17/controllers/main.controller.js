@@ -6,7 +6,12 @@ exports.inicio = (request, response, next) => {
 }
 
 exports.submit = (request, response, next) => {
+    
     let val = request.body;
+    if(val.boton == '/inicio'){
+        response.redirect(val.boton);
+        return
+    }
     const reg = new User(val.nombre, val.A1, val.A2, val.ECiv, val.Email, val.Ocupacion, val.Tel);
     console.log(reg);
     reg.save().then().catch((error) => {
@@ -36,19 +41,18 @@ exports.edit = (request, response, next) => {
 }
 
 exports.selectedit = (request, response, next) => {
-    let parameters = request.body.consulta.split(" ");
+    let parameters = request.body.consulta.split("^");
     console.log(parameters);
-    User.fetchOne(parameters[0], parameters[1], parameters[2]).then(([rows, fieldData]) => {
-        //console.log(rows);
-        console.log(rows);
-        response.redirect('/editar');
-    }).catch((error) =>{
-        console.log(error);
-        response.redirect('/inicio');
-    });
-    
-    
-    
+    if(parameters != undefined){
+        User.fetchOne(parameters[0], parameters[1], parameters[2]).then(([rows, fieldData]) => {
+            //console.log(rows);
+            console.log(rows);
+            response.redirect('/editar');
+        }).catch((error) =>{
+            console.log(error);
+            response.redirect('/inicio');
+        });
+    } 
 }
 exports.error = (request, response, next) => {
     response.status(404);
