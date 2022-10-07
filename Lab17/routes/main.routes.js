@@ -8,8 +8,13 @@ router.use(express.static(path.join(__dirname, '..','public')));
 router.post('/inicio', mainControl.submit);
 router.use('/inicio', mainControl.inicio);
 router.post('/seleccion', mainControl.nav);
+
+router.post('/load', mainControl.updateinfo);
 router.post('/editar', mainControl.selectedit);
 router.use('/editar', mainControl.edit);
+router.use('/success', mainControl.success);
+router.use('/fail', mainControl.fail);
+
 
 
 router.use('/', mainControl.inicio);
