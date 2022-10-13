@@ -6,6 +6,7 @@
         <div class="has-background-light column is-4 box">
             <div id="title" class="has-text-centered box has-background-white">
                 <h1 class="is-size-1"> Editar Usuario </h1>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
             </div> 
             <br>
             <% if(nombres != 'undefined') { %>
@@ -22,6 +23,7 @@
                     <br>
                     <br>
                     <button class="button is-primary is-fullwidth" type="submit" id="boton" name="boton" value="/editar"> Seleccionar Usuario</button>
+                    
                 </form>
             </div> 
             <% } else {%>

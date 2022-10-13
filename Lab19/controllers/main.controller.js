@@ -3,7 +3,7 @@ const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 const bulmaToast = require('bulma-toast');
 exports.inicio = (request, response, next) => {
-    response.render('inicio');
+    response.render('preguntas');
 }
 
 exports.submit = (request, response, next) => {
@@ -99,6 +99,9 @@ exports.error = (request, response, next) => {
 
 
 exports.login = (request, response, next) => {
+    
+    //Token = request.csrfToken();
+    //console.log(Token);
     response.render('login');
 }
 
@@ -111,23 +114,19 @@ exports.loginverf = (request, response, next) => {
             if (doMatch) {
                 request.session.isLoggedIn = true;
                 request.session.user = info.User;
-                console.log('Logeado Pa');
                 return request.session.save(err => {
                     console.log(request.session.user);
-                    response.redirect('/');
-                    
+                    //response.redirect('/inicio');
+                    response.redirect('/inicio');
                 });
                 
-                console.log('Logeado Pa');
-                response.redirect('/login');
-                return
+                
                 
             }
             
             response.redirect('/login');
         }).catch(err => {
             console.log(err);
-            console.log('mamo pa');
             response.redirect('/login');
         });
         

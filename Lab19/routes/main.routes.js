@@ -6,21 +6,21 @@ const path = require('path');
 router.use(express.static(path.join(__dirname, '..','public')));
 
 router.post('/login', mainControl.loginverf);
-router.use('/login', mainControl.login);
-router.post('/inicio', mainControl.submit);
-router.use('/inicio', isAuth, mainControl.inicio);
+router.get('/login', mainControl.login);
+router.post('/inicio', isAuth, mainControl.submit);
+router.get('/inicio', isAuth, mainControl.inicio);
 router.post('/seleccion', mainControl.nav);
 
 router.post('/load', mainControl.updateinfo);
-router.post('/editar', mainControl.selectedit);
-router.use('/editar', isAuth, mainControl.edit);
+router.post('/editar', isAuth, mainControl.selectedit);
+router.get('/editar', isAuth, mainControl.edit);
 router.use('/success', mainControl.success);
 router.use('/fail', mainControl.fail);
-router.post('/logout', isAuth, mainControl.logout);
+router.get('/logout', isAuth, mainControl.logout);
 
 
 
-router.use('/', mainControl.inicio);
-router.use(mainControl.error);
+router.get('/', mainControl.inicio);
+router.get(mainControl.error);
 
 module.exports = router;
