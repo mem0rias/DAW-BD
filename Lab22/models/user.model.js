@@ -28,8 +28,8 @@ module.exports = class User {
     }
 
     Update(n, a1, a2){
-        return db.execute('UPDATE usuarios SET nombre = ?, Primer_Apellido = ?, Segundo_Apellido = ?, Correo_Electronico = ?, Estado_Civil = ?, Ocupacion = ?, Telefono = ? where nombre = ? and Primer_Apellido = ? and Segundo_Apellido = ?',
-        [this.nombre, this.A1, this.A2, this.Email, this.EC, this.Ocup, this.Tel, n, a1, a2]);
+        return db.execute('UPDATE usuarios SET nombre = ?, Primer_Apellido = ?, Segundo_Apellido = ?, Correo_Electronico = ? where nombre = ? and Primer_Apellido = ? and Segundo_Apellido = ?',
+        [this.nombre, this.A1, this.A2, this.Email, n, a1, a2]);
     }
 
     static fetchNames(){

@@ -49,15 +49,18 @@ exports.edit = (request, response, next) => {
 }
 
 exports.selectedit = (request, response, next) => {
-    let parameters = request.body.consulta.split("^");
-    console.log(parameters);
+    let parameters = request.params.consulta.split("^");
+    //console.log(parameters);
     if(parameters != undefined){
         User.fetchOne(parameters[0], parameters[1], parameters[2]).then(([rows, fieldData]) => {
             //console.log(rows);
-            console.log(rows);
+            //console.log(rows);
+            
+            let inpnames = ['Nombre(s)', 'Primer Apellido', 'Segundo Apellido', 'Correo Electronico'];
+            let inpids = ['nombre', 'Primer_Apellido', 'Segundo_Apellido', 'Correo_Electronico'];
             User.fetchNames().then(([rows2, fieldData2]) => {
                 //console.log(rows);
-                response.render('edit',{nombres: rows2, busqueda: 1, info: rows[0]});
+                response.status(200).json({info: rows,inputs: inpnames, inputnames : inpids});
                 return
             }).catch((error) =>{
                 console.log(error);
@@ -73,17 +76,21 @@ exports.selectedit = (request, response, next) => {
 }
 
 exports.updateinfo = (request, response, next) => {
-    let val = request.body;
-    let parameters = request.body.enviar.split("^");
-    let toastvar = 'Error editando usuario'
+    
+    
+    console.log(request.body.valores);
+    console.log(request.body.originales);
+    let val = request.body.originales;
+    let parameters = request.body.valores;
+    const reg2 = new User(parameters[0], parameters[1], parameters[2], val.ECiv, parameters[3], val.Ocupacion, val.Tel);
     console.log(parameters);
-    const reg2 = new User(val.nombre, val.A1, val.A2, val.ECiv, val.Email, val.Ocupacion, val.Tel);
-    reg2.Update(parameters[0], parameters[1], parameters[2]).then(() =>{
+    console.log(val.nombre);
+    reg2.Update(val.nombre, val.Primer_Apellido, val.Segundo_Apellido).then(() =>{
         console.log("Se logro!");
-        response.redirect('/success');
+        response.status(200).json('amonos');
     }).catch((error) => {
         console.log(error);
-        response.redirect('/fail');
+        response.status(200).json('murio');
     });
     
     

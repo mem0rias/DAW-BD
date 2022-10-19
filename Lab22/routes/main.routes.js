@@ -12,7 +12,7 @@ router.get('/inicio', isAuth, mainControl.inicio);
 router.post('/seleccion', mainControl.nav);
 router.get('/pregs',mainControl.preguntas)
 router.post('/load', mainControl.updateinfo);
-router.post('/editar', isAuth, mainControl.selectedit);
+router.get('/editar2/:consulta', isAuth, mainControl.selectedit);
 router.get('/editar', isAuth, mainControl.edit);
 router.use('/success', mainControl.success);
 router.use('/fail', mainControl.fail);

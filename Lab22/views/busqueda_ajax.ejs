@@ -1,7 +1,12 @@
 
 <script>
+    let inputnames;
+    let originals;
     const busqueda_asinc = () => {
-        fetch('/busqueda' , {
+
+        let conss = document.getElementById('consulta').value;
+        console.log(conss);
+        fetch('/editar2/' + conss , {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -9,11 +14,58 @@
         }).then(result => {
             return result.json();
         }).then(data => {
+            console.log(data.info);
+            let infouser = Object.values(data.info[0]);
+            let infoinputs = Object.values(data.inputs);
+            originals = data.info[0];
+            inputnames= Object.values(data.inputnames);
+            console.log(infouser);
+            console.log(infoinputs);
+            let html = '<br>';
+            for(let i = 0; i < infoinputs.length; i++){
+                html += '<h2>' + infoinputs[i] + '</h2>';
+                html += '<h2 class="has-text-danger"> *</h2>';
+                html +='<input class="input" type="text" id="' + inputnames[i] +'" name="' + inputnames[i] +'" value="' + infouser[i] + '">';
+                html += '<br><br>';
+            }
+            html += '<h2> La informacion de los usuarios se toma asincronamente de la Base de Datos! </h2>';
+            document.getElementById('busqueda').innerHTML = html;
+
             console.log(data);
-            bulmaToast.toast({ message: 'Hello There' })
+            //bulmaToast.toast({ message: 'Hello There' })
         }).catch(err => {
             console.log(err);
         })
     }
+    const guardarinfo = () => {
+        const csrf = document.getElementById('_csrf').value;
+        let valores = new Array()
+        for(let i = 0; i < 4; i++){
+            valores.push(document.getElementById(inputnames[i]).value);
+        }
+       
+        fetch('/load', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                valores: valores,
+                originales: originals,
+                _csrf: csrf,
+            }),
+        }).then(result => {
+            return result.json();
+        }).then(data => {
+            console.log('Exito');
+            console.log(data);
+            location.reload();
+            //busqueda_asinc();
+        }).catch(err =>{
+            console.log(err);
+        });
+    }
+    document.getElementById('botonguardar').onclick = guardarinfo;
     document.getElementById('consulta').onchange = busqueda_asinc;
+    
 </script>
