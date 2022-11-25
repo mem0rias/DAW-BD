@@ -1,0 +1,40 @@
+<%- include('./includes/head.ejs') %>
+
+
+
+<h1> Esta pagina utiliza una API</h1>
+
+<div class="columns">
+    <div class="column is-3">
+        <h1 class="title"> MXN</h1>
+        <input type="text" class="input" placeholder="Conversor de pesos a dolares" onkeyup="convertir(this)">
+        <h1 class="title"> USD</h1>
+        <input type="text" class="input" placeholder="Resultado" value="" readonly id="moneda">
+    
+    </div>
+    
+</div>
+
+<script>
+    const convertir = (element) => {
+        fetch(`https://currency-converter5.p.rapidapi.com/currency/convert?format=json&from=MXN&to=USD&amount=${element.value}`, {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'cac2824b76msh31ce980b60eb100p15f9a1jsn061e0f120bfa',
+                'X-RapidAPI-Host': 'currency-converter5.p.rapidapi.com'
+            },
+            
+        }).then(result => {
+            return result.json();
+        }).then(data => {
+            console.log(data);
+            let valueM = data.rates.USD.rate_for_amount;
+            document.getElementById('moneda').value = valueM;
+        }).catch(err =>{
+            console.log(err);
+        });
+        
+    }
+</script>
+ 
+<%- include('./includes/footer.ejs') %>

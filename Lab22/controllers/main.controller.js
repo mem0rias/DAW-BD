@@ -157,3 +157,4 @@ exports.logout = (request, response, next) => {
         response.redirect('/login'); //Este código se ejecuta cuando la sesión se elimina.
     });
 };
+
